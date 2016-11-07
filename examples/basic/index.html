@@ -68,60 +68,37 @@
   <body>
     <a-scene>
       <a-assets>
-        <div id="hello" class="scoreboard">
-          <h1>Final Score!</b></h1>
-          <center>
-            ⚽
-          </center>
-
-          <table>
-            <tr><td>Country</td><td>Score</td></tr>
-            <tr><td>Germany</td><td>1</td></tr>
-            <tr><td>United Kingdom</td><td>0</td></tr>
-          </table>
-
-        </div>
-
-        <div id="goodbye">
-          <center>1</center>
-        </div>
-
-
-        <div id="bears" class="aww">
-          <h1>Friends!</h1>
-          <img crossorigin="anonymous" style="width: 480px; height: 420px" src="http://i.embed.ly/1/display/resize?url=http%3A%2F%2Fimg11.deviantart.net%2Fa121%2Fi%2F2014%2F244%2F1%2Fc%2Fstargazer_by_satania-d7xiu7g.png&animate=false&quality=90&grow=true&width=480&height=420&key=90eb0b46c1e146e5afbbe0279e77866b" />
-        </div>
-
-        <div class="tower">
-          <ul>
-            <li>🐴</li>
-            <li>🐮</li>
-            <li>🐷</li>
-            <li>🐹</li>
-          </ul>
-        </div>
+       
       </a-assets>
 
       <a-sky color="#cef"></a-sky>
-      <a-entity id="grid" rotation="-90 0 0" geometry="primitive: plane; width: 64; height: 64;" material="repeat: 64 64; src: url(https://assets-scenevr-com.s3-us-west-1.amazonaws.com/prerelease/images/grid.png)"></a-entity>
-
-      <a-entity geometry="primitive: box" scale="0.5 2 0.5" rotation="0 22d 0" position="0 2 -4" draw="width: 128; height: 512;" htmltexture="asset: .tower"></a-entity>
-
-      <a-entity id="box" geometry="primitive: box" position="-3 1 -4" draw="width: 512; height: 512;" htmltexture="asset: #hello"></a-entity>
-      
-      <a-entity geometry="primitive: box" position="3 1 -4" draw="width: 64; height: 64;" 
-      htmltexture="asset: #goodbye"></a-entity>
-
-      <a-entity geometry="primitive: plane" position="10 4 -4" scale="4 4 0" draw="width: 512; height: 512;" 
-      htmltexture="asset: #bears.aww"></a-entity>
+    
+      <a-entity id="box" scale="2 2 2" geometry="primitive: box" htmltexture="asset: #hello" position="0 2 -4" draw="width: 250; height: 512;"></a-entity>
     </a-scene>
+
+    <div id="hello" class="scoreboard">
+      <h1>Hello World!</b></h1>
+      <center><button>Button</button></center>
+      <center>
+        ⚽
+      </center>
+
+      <table>
+        <tr><td>Country</td><td>Score</td></tr>
+        <tr><td>Germany</td><td>1</td></tr>
+        <tr><td>United Kingdom</td><td>0</td></tr>
+      </table>
+
+    </div>
 
     <script>
       var el = document.querySelector('#box');
       var r = new THREE.Euler();
 
       setInterval(function () {
-        r.y += 0.1;
+        r.x -= 0.5 * (1 + Math.random());
+        r.y += 0.5 * (1 + Math.random());
+        r.z -= 0.5 * (1 + Math.random());
         el.setAttribute('rotation', r);
       }, 1000 / 60);
 

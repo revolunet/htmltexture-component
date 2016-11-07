@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/scenevr/htmltexture-component#readme",
   "devDependencies": {
-    "aframe": "aframevr/aframe#dev",
+    "aframe": "aframevr/aframe",
     "aframe-draw-component": "^1.2.1",
     "browserify": "^12.0.1",
     "browserify-css": "^0.8.3",
